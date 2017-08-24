@@ -19,7 +19,7 @@ public interface ActionViewPadrao extends Serializable {
 	abstract String ativar() throws Exception;
 
 	/**
-	 * Realiza inicialização de métodos valores ou variáveis
+	 * PostConstruct: Realiza inicialização de métodos, valores ou variáveis
 	 * 
 	 * @return
 	 * @throws Exception
