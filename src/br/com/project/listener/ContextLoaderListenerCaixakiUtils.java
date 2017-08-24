@@ -11,7 +11,7 @@ import org.springframework.web.context.support.WebApplicationContextUtils;
 @ApplicationScoped
 public class ContextLoaderListenerCaixakiUtils extends ContextLoaderListener
 		implements Serializable {
-
+ 
 	private static final long serialVersionUID = 1L;
 
 	private static WebApplicationContext getWebApplicationContext() {
