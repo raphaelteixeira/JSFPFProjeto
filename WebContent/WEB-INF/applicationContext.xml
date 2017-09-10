@@ -79,4 +79,42 @@
 
 	<!-- -->
 
+	<bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"
+		lazy-init="false">
+		<property name="mappings">
+			<props>
+				<prop key="/index.jsp">indexController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="viewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		lazy-init="false">
+
+		<property name="viewClass"
+			value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WebContent/" />
+		<property name="suffix" value="*.jsf, *.xhtml, *.html, *.jsp, *.js" />
+	</bean>
+
+	<bean name="indexController" lazy-init="false"
+		class="org.springframework.web.servlet.mvc.ParameterizableViewController" />
+
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer"
+		lazy-init="false">
+		<property name="scopes">
+			<map>
+				<entry key="view">
+					<bean class="br.com.project.bean.geral.ViewScope" />
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+	<bean id="reportUtil" class="br.com.project.report.util.ReportUtil" />
+	<bean id="utilFramework" class="br.com.framework.utils.UtilFramework"
+		scope="session" />
+
 </beans>
